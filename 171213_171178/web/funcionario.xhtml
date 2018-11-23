@@ -18,11 +18,11 @@
                 <p:outputLabel value="Nome:"/>
                 <p:inputText   value="#{funcionarioMB.func.nome}"/>
 
-                <p:outputLabel value="Empresa" />
-                <p:selectOneMenu value="#{funcionarioMB.empresaEscolhida}" converter="converterEmpresa" style="width:100%">
-                    <f:selectItems value="#{funcionarioMB.empresas}" var="aux"
-                                   itemValue="#{aux}" itemLabel="#{aux.nome}" />
-                </p:selectOneMenu>
+               <!-- <p:outputLabel value="Empresa" />
+                <p:selectOneMenu value="" converter="converterEmpresa" style="width:100%">
+                    <f:selectItems value="" var="aux"
+                                   itemValue="" itemLabel="" />
+                </p:selectOneMenu> !-->
 
 
                 <p:outputLabel value="Função:"/>
@@ -68,18 +68,18 @@
                     <p:outputLabel value="#{f.salario}"/>
                 </p:column>
 
-                <p:column headerText="Empresa" >
+              <!--  <p:column headerText="Empresa" >
                     <p:cellEditor>
-                        <f:facet name="output"> <p:outputLabel value="#{f.empresa.nome}"/></f:facet>
+                        <f:facet name="output"> <p:outputLabel value=""/></f:facet>
                         <f:facet name="input" >
-                            <p:selectOneMenu value="#{f.empresa}" converter="converterEmpresa" style="width:100%">
-                             <f:selectItems value="#{funcionarioMB.empresas}" var="aux"
-                                               itemValue="#{aux}" itemLabel="#{aux.nome}"
+                            <p:selectOneMenu value="" converter="converterEmpresa" style="width:100%">
+                             <f:selectItems value="" var="aux"
+                                               itemValue="" itemLabel=""
                                                />
                             </p:selectOneMenu>
                         </f:facet>
                     </p:cellEditor>
-                </p:column>
+                </p:column> !-->
 
                 <p:column style="width:32px">
                     <p:rowEditor />
