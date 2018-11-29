@@ -13,33 +13,33 @@
             <h:form id="formPro">
             <p:panelGrid columns="2">
                 <p:outputLabel value="Código"/>
-                <p:inputText value="#{externoMB.pro.codigo}"/>
+                <p:inputText value="#{internoMB.pro.codigo}"/>
                 <p:outputLabel value="Nome"/>
-                <p:inputText value="#{externoMB.pro.nome}"/>
+                <p:inputText value="#{internoMB.pro.nome}"/>
                 <p:outputLabel value="Categoria"/>
-                <p:inputText value="#{externoMB.pro.categoria}"/>
+                <p:inputText value="#{internoMB.pro.categoria}"/>
                 <p:outputLabel value="Preço"/>
-                <p:inputText value="#{externoMB.pro.preco}"/>
+                <p:inputText value="#{internoMB.pro.preco}"/>
                 <p:outputLabel value="Moeda"/>
-                <p:inputText value="#{externoMB.pro.moeda}"/>
+                <p:inputText value="#{internoMB.pro.moeda}"/>
                 <p:outputLabel value="Imposto"/>
-                <p:inputText value="#{externoMB.pro.imposto}"/>
-                <p:outputLabel value="Destino"/>
-                <p:inputText value="#{externoMB.pro.destino}"/>
+                <p:inputText value="#{internoMB.pro.imposto}"/>
+                <p:outputLabel value="Incentivo"/>
+                <p:inputText value="#{internoMB.pro.incentivo}"/>
             </p:panelGrid>
             <p:commandButton value="Salvar"
-                             action="#{externoMB.salvar()}"
+                             action="#{internoMB.salvar()}"
                              update=":formPro"/>
             
             <p:growl id="msgs" showDetail="true"/>
             <p:dataTable id="dataTableFunc"
-                         var="p" value="#{externoMB.produtos}"
+                         var="p" value="#{internoMB.produtos}"
                          rows="10"
                          paginator="true"
                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                          rowsPerPageTemplate="5,10,15"
                          editable="true"
-                         selection="#{externoMB.selectedPro}"
+                         selection="#{internoMB.selectedPro}"
                          selectionMode="single"
                          rowKey="#{p.codigo}"
                          >
@@ -63,7 +63,7 @@
                     <p:outputLabel value="#{p.imposto}"/>
                 </p:column>
                 <p:column headerText="Destino">
-                    <p:outputLabel value="#{p}"/>
+                    <p:outputLabel value="#{p.ProdutoMercadoInterno}"/>
                 </p:column>
                 
                 </p:dataTable>
