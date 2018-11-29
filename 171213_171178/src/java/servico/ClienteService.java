@@ -15,6 +15,10 @@ public class ClienteService {
     public ArrayList<Cliente> getClientes(){
         return listcliente;
     }
+
+    public void setListcliente(ArrayList<Cliente> listcliente) {
+        this.listcliente = listcliente;
+    }
     
     public void remover(Cliente c){
         listcliente.remove(c);

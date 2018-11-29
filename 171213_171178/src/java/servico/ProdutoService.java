@@ -11,7 +11,7 @@ public class ProdutoService {
         listProdutos.add(p);
     }
     
-    public ArrayList<Produto> getClientes(){
+    public ArrayList<Produto> getProdutos(){
         return listProdutos;
     }
     
