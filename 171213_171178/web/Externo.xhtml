@@ -2,7 +2,8 @@
                xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:p="http://primefaces.org/ui">
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core/">
                 
         <ui:define name="title">
 		<h:outputText value="Tela1" />
@@ -13,15 +14,28 @@
             <h:form id="formPro">
             <p:panelGrid columns="2">
                 <p:outputLabel value="Código"/>
-                <p:inputText value="#{externoMB.pro.codigo}"/>
+                    <p:inputText value="#{externoMB.pro.codigo}"/>
                 <p:outputLabel value="Nome"/>
-                <p:inputText value="#{externoMB.pro.nome}"/>
+                    <p:inputText value="#{externoMB.pro.nome}"/>
                 <p:outputLabel value="Categoria"/>
-                <p:inputText value="#{externoMB.pro.categoria}"/>
+                <p:selectOneMenu id="console" value="#{externoMB.pro.categoria}" style="width:125px">
+                    <f:selectItem itemLabel="" itemValue="" />
+                    <f:selectItem itemLabel="Casa" itemValue="Casa" />
+                    <f:selectItem itemLabel="Cozinha" itemValue="Cozinha" />
+                    <f:selectItem itemLabel="Higiene" itemValue="Higiene" />
+                    <f:selectItem itemLabel="Infantil" itemValue="Infantil" />
+                    <f:selectItem itemLabel="Alimentos" itemValue="Alimentos" />
+                    <f:selectItem itemLabel="Lazer" itemValue="Lazer" />
+                </p:selectOneMenu>
                 <p:outputLabel value="Preço"/>
-                <p:inputText value="#{externoMB.pro.preco}"/>
+                    <p:inputText value="#{externoMB.pro.preco}"/>
                 <p:outputLabel value="Moeda"/>
-                <p:inputText value="#{externoMB.pro.moeda}"/>
+                <p:selectOneMenu id="console" value="#{externoMB.pro.moeda}" style="width:125px">
+                    <f:selectItem itemLabel="Real" itemValue="Real" />
+                    <f:selectItem itemLabel="Dólar" itemValue="Dólar" />
+                    <f:selectItem itemLabel="Libras" itemValue="Libras" />
+                    <f:selectItem itemLabel="Ienes" itemValue="Ienes" />
+                </p:selectOneMenu>
                 <p:outputLabel value="Imposto"/>
                 <p:inputText value="#{externoMB.pro.imposto}"/>
                 <p:outputLabel value="Destino"/>
