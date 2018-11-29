@@ -11,7 +11,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 
-public class ExternoMB {
+public class InternoMB {
     private ProdutoService produtoService =  new ProdutoService();
     private ProdutoExportacao pro = new ProdutoExportacao();
     private ProdutoExportacao selectedPro;
@@ -21,8 +21,8 @@ public class ExternoMB {
         pro = new ProdutoExportacao();
     }
 
-    public ArrayList<ProdutoExportacao> getProdutos() {
-                return produtoService.getProdutosExterno();
+    public ArrayList<Produto> getProdutos() {
+        return produtoService.getProdutos();
     }
 
     public void setProdutoService(ProdutoService produtoService) {
