@@ -1,72 +1,87 @@
+               
 <ui:composition template="template.xhtml"
-               xmlns="http://www.w3.org/1999/xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:p="http://primefaces.org/ui">
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
                 
-        <ui:define name="title">
-		<h:outputText value="Tela1" />
-	</ui:define>
-    
-	<ui:define name="principal">
-            <h1>Produto Exportação</h1>
-            <h:form id="formPro">
-            <p:panelGrid columns="2">
-                <p:outputLabel value="Código"/>
-                <p:inputText value="#{externoMB.pro.codigo}"/>
-                <p:outputLabel value="Nome"/>
-                <p:inputText value="#{externoMB.pro.nome}"/>
-                <p:outputLabel value="Categoria"/>
-                <p:inputText value="#{externoMB.pro.categoria}"/>
-                <p:outputLabel value="Preço"/>
-                <p:inputText value="#{externoMB.pro.preco}"/>
-                <p:outputLabel value="Moeda"/>
-                <p:inputText value="#{externoMB.pro.moeda}"/>
-                <p:outputLabel value="Imposto"/>
-                <p:inputText value="#{externoMB.pro.imposto}"/>
-                <p:outputLabel value="Destino"/>
-                <p:inputText value="#{externoMB.pro.destino}"/>
-            </p:panelGrid>
-            <p:commandButton value="Salvar"
-                             action="#{externoMB.salvar()}"
-                             update=":formPro"/>
-            
-            <p:growl id="msgs" showDetail="true"/>
-            <p:dataTable id="dataTableFunc"
-                         var="p" value="#{externoMB.produtos}"
-                         rows="10"
-                         paginator="true"
-                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                         rowsPerPageTemplate="5,10,15"
-                         editable="true"
-                         selection="#{externoMB.selectedPro}"
-                         selectionMode="single"
-                         rowKey="#{p.codigo}"
-                         >
-                
-                <p:column headerText="Código">
-                    <p:outputLabel value="#{p.codigo}"/>
-                </p:column>
-                <p:column headerText="Nome">
-                    <p:outputLabel value="#{p.nome}"/>
-                </p:column>
-                  <p:column headerText="Categoria">
-                      <p:outputLabel value="#{p.categoria}"/>
-                </p:column>
-                <p:column headerText="Preço">
-                    <p:outputLabel value="#{p.preco}"/>
-                </p:column>
-                <p:column headerText="Moeda">
-                    <p:outputLabel value="#{p.moeda}"/>
-                </p:column>
-                <p:column headerText="Imposto">
-                    <p:outputLabel value="#{p.imposto}"/>
-                </p:column>
-                <p:column headerText="Destino">
-                    <p:outputLabel value="#{p}"/>
-                </p:column>
-                
-                </p:dataTable>
-            </h:form>           
-	</ui:define>
+    <ui:define name="title">
+            <h:outputText value="Produto Interno" />
+    </ui:define>
+
+    <ui:define name="principal">
+        <h1>Produto Importação</h1>
+        <h:form id="formPro">
+        <p:panelGrid columns="2">
+            <p:outputLabel value="Código"/>
+            <p:inputText value="#{internoMB.pro.codigo}"/>
+            <p:outputLabel value="Nome"/>
+                <p:inputText value="#{internoMB.pro.nome}"/>
+            <p:outputLabel for="formPro" value="Categoria" />
+            <p:selectOneMenu value="#{internoMB.pro.categoria}" style="width:125px">
+                <f:selectItem itemLabel="Casa" itemValue="Casa" />
+                <f:selectItem itemLabel="Cozinha" itemValue="Cozinha" />
+                <f:selectItem itemLabel="Higiene" itemValue="Higiene" />
+                <f:selectItem itemLabel="Infantil" itemValue="Infantil" />
+                <f:selectItem itemLabel="Alimentos" itemValue="Alimentos" />
+                <f:selectItem itemLabel="Lazer" itemValue="Lazer" />
+            </p:selectOneMenu>
+            <p:outputLabel value="Preço"/>
+                <p:inputText value="#{internoMB.pro.preco}"/>
+            <p:outputLabel for="formPro" value="Moeda" />
+            <p:selectOneMenu value="#{internoMB.pro.moeda}" style="width:125px">
+                <f:selectItem itemLabel="Real" itemValue="Real" />
+                <f:selectItem itemLabel="Dólar" itemValue="Dólar" />
+                <f:selectItem itemLabel="Libras" itemValue="Libras" />
+                <f:selectItem itemLabel="Ienes" itemValue="Ienes" />
+            </p:selectOneMenu>
+            <p:outputLabel for="formPro" value="Incentivo" />
+            <p:selectOneMenu value="#{internoMB.pro.incentivo}" style="width:125px">
+                <f:selectItem itemLabel="Não" itemValue="False" />
+                <f:selectItem itemLabel="Sim" itemValue="True" />
+            </p:selectOneMenu>
+        </p:panelGrid>
+        <p:commandButton value="Salvar"
+                         action="#{internoMB.salvar()}"
+                         update=":formPro"/>
+
+        <p:growl id="msgs" showDetail="true"/>
+        <p:dataTable id="dataTableFunc"
+                     var="p" value="#{internoMB.produtos}"
+                     rows="10"
+                     paginator="true"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                     rowsPerPageTemplate="5,10,15"
+                     editable="true"
+                     selection="#{internoMB.selectedPro}"
+                     selectionMode="single"
+                     rowKey="#{p.codigo}"
+                     >
+
+            <p:column headerText="Código">
+                <p:outputLabel value="#{p.codigo}"/>
+            </p:column>
+            <p:column headerText="Nome">
+                <p:outputLabel value="#{p.nome}"/>
+            </p:column>
+              <p:column headerText="Categoria">
+                  <p:outputLabel value="#{p.categoria}"/>
+            </p:column>
+            <p:column headerText="Preço">
+                <p:outputLabel value="#{p.preco}"/>
+            </p:column>
+            <p:column headerText="Moeda">
+                <p:outputLabel value="#{p.moeda}"/>
+            </p:column>
+            <p:column headerText="Imposto">
+                <p:outputLabel value="#{p.imposto}"/>
+            </p:column>
+            <p:column headerText="Incentivo">
+                <p:outputLabel value="#{p.incentivo}"/>
+            </p:column>
+
+            </p:dataTable>
+        </h:form>           
+    </ui:define>
 </ui:composition>
