@@ -1,7 +1,6 @@
 
 package managedbean;
 
-import Modelo.Produto;
 import Modelo.ProdutoExportacao;
 import Servico.ProdutoService;
 import java.util.ArrayList;

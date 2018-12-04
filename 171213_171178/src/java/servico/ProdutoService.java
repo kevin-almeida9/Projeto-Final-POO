@@ -16,6 +16,10 @@ public class ProdutoService {
     public ArrayList<Produto> getProdutos(){
         return listProdutos;
     }
+
+    public void setListProdutos(ArrayList<Produto> listProdutos) {
+        this.listProdutos = listProdutos;
+    }
     
     public void remover(Produto p){
         listProdutos.remove(p);
@@ -49,7 +53,5 @@ public class ProdutoService {
         return aux;
     }
 
-    public ArrayList<ProdutoMercadoInterno> ProdutoMercadoInterno() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }

@@ -1,14 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Service;
 
-/**
- *
- * @author kevin
- */
+package servico;
+
+import Modelo.Pedido;
+import Servico.Dados;
+import java.util.ArrayList;
+
+
 public class PedidoService {
+    private ArrayList <Pedido> listPedidos = Dados.getPedidos();
     
+    public void salvar(Pedido p){
+        listPedidos.add(p);
+    }
+
+    public ArrayList<Pedido> getListPedidos() {
+        return listPedidos;
+    }
+
+    public void setListPedidos(ArrayList<Pedido> listPedidos) {
+        this.listPedidos = listPedidos;
+    }
+    
+    public void remove(Pedido p){
+        listPedidos.remove(p);
+    }
 }

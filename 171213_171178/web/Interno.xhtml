@@ -10,7 +10,7 @@
     
 	<ui:define name="principal">
             <h1>Produto Exportação</h1>
-            <h:form id="formPro">
+            <h:form id="formPro1">
             <p:panelGrid columns="2">
                 <p:outputLabel value="Código"/>
                 <p:inputText value="#{internoMB.pro.codigo}"/>
@@ -24,12 +24,12 @@
                 <p:inputText value="#{internoMB.pro.moeda}"/>
                 <p:outputLabel value="Imposto"/>
                 <p:inputText value="#{internoMB.pro.imposto}"/>
-                <p:outputLabel value="Incentivo"/>
-                <p:inputText value="#{internoMB.pro.incentivo}"/>
+                <!--<p:outputLabel value="Incentivo"/>
+                <p:inputText value="#"/> -->
             </p:panelGrid>
             <p:commandButton value="Salvar"
                              action="#{internoMB.salvar()}"
-                             update=":formPro"/>
+                             update=":formPro1"/>
             
             <p:growl id="msgs" showDetail="true"/>
             <p:dataTable id="dataTableFunc"
@@ -62,9 +62,9 @@
                 <p:column headerText="Imposto">
                     <p:outputLabel value="#{p.imposto}"/>
                 </p:column>
-                <p:column headerText="Destino">
-                    <p:outputLabel value="#{p.ProdutoMercadoInterno}"/>
-                </p:column>
+                <!--<p:column headerText="Incentivo">
+                    <p:outputLabel value="#"/>
+                </p:column>-->
                 
                 </p:dataTable>
             </h:form>           

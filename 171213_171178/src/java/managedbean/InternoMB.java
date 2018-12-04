@@ -21,7 +21,7 @@ public class InternoMB {
     }
 
     public ArrayList<ProdutoMercadoInterno> getProdutos() {
-        return produtoService.ProdutoMercadoInterno();
+        return produtoService.getProdutosInterno();
     }
 
     public void setProdutoService(ProdutoService produtoService) {
@@ -43,6 +43,6 @@ public class InternoMB {
     public void setSelectedPro(ProdutoMercadoInterno selectedPro) {
         this.selectedPro = selectedPro;
     }
-    
+
     
 }
