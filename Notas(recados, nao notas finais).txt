@@ -1,6 +1,0 @@
-Manutenção:
-- Cliente;
-- Categoria;
-- Produto;
-
--> Cadastro, alterações, deletar e etc
