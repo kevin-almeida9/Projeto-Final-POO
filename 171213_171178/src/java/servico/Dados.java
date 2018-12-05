@@ -1,8 +1,6 @@
 
 package Servico;
 
-
-import Modelo.Categoria;
 import Modelo.Cliente;
 import Modelo.Pedido;
 import Modelo.Produto;
@@ -12,14 +10,14 @@ public class Dados {
     private static ArrayList <Cliente> LISTA_CLIENTES;
     private static ArrayList <Produto> LISTA_PRODUTOS;
     private static ArrayList <Pedido> LISTA_PEDIDOS;
-    private static ArrayList <Categoria> LISTA_CATEGORIAS;
+    
     
     public static void init() {
         
-        LISTA_CLIENTES = new ArrayList();
-        LISTA_PRODUTOS = new ArrayList();
-        LISTA_PEDIDOS = new ArrayList();
-        LISTA_CATEGORIAS = new ArrayList();
+         LISTA_CLIENTES = new ArrayList();
+         LISTA_PRODUTOS = new ArrayList();
+         LISTA_PEDIDOS = new ArrayList();
+        
     }
 
     public static ArrayList<Pedido> getPedidos() {
@@ -44,10 +42,4 @@ public class Dados {
         return LISTA_PRODUTOS;
     }
     
-    public static ArrayList<Categoria> getCategoriass() {
-        if(LISTA_CATEGORIAS == null){
-            init();
-        }
-        return LISTA_CATEGORIAS;
-    }
 }
