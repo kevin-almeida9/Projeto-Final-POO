@@ -6,7 +6,7 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
                 
         <ui:define name="title">
-		<h:outputText value="Produto Exportação" />
+		<h:outputText value="POO" />
 	</ui:define>
     
 	<ui:define name="principal">
@@ -52,31 +52,58 @@
                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                          rowsPerPageTemplate="5,10,15"
                          editable="true"
+                         editMode="cell"
+                         widgetVar="cellProd"
                          selection="#{externoMB.selectedPro}"
                          selectionMode="single"
                          rowKey="#{p.codigo}"
                          >
                 
+                <f:facet name="header">
+                        Produtos Exportação
+                </f:facet>
+                
                 <p:column headerText="Código">
-                    <p:outputLabel value="#{p.codigo}"/>
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{p.codigo}" /></f:facet>
+                        <f:facet name="input"><p:inputText id="modelInput" value="#{p.codigo}" style="width:96%"/></f:facet>
+                    </p:cellEditor>
                 </p:column>
                 <p:column headerText="Nome">
-                    <p:outputLabel value="#{p.nome}"/>
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{p.nome}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{p.nome}" style="width:96%"/></f:facet>
+                    </p:cellEditor>
                 </p:column>
                   <p:column headerText="Categoria">
-                      <p:outputLabel value="#{p.categoria}"/>
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{p.categoria}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{p.categoria}" style="width:96%"/></f:facet>
+                    </p:cellEditor>
                 </p:column>
                 <p:column headerText="Preço">
-                    <p:outputLabel value="#{p.preco}"/>
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{p.preco}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{p.preco}" style="width:96%"/></f:facet>
+                    </p:cellEditor>
                 </p:column>
                 <p:column headerText="Moeda">
-                    <p:outputLabel value="#{p.moeda}"/>
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{p.moeda}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{p.moeda}" style="width:96%"/></f:facet>
+                    </p:cellEditor>
                 </p:column>
                 <p:column headerText="Imposto">
-                    <p:outputLabel value="#{p.imposto}"/>
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{p.imposto}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{p.imposto}" style="width:96%"/></f:facet>
+                    </p:cellEditor>
                 </p:column>
                 <p:column headerText="Destino">
-                    <p:outputLabel value="#{p.destino}"/>
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{p.destino}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{p.destino}" style="width:96%"/></f:facet>
+                    </p:cellEditor>
                 </p:column>
                 
                 </p:dataTable>
