@@ -1,8 +1,9 @@
 <ui:composition template="template.xhtml"
-               xmlns="http://www.w3.org/1999/xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:p="http://primefaces.org/ui">
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
                 
         <ui:define name="title">
 		<h:outputText value="Tela1" />
@@ -24,8 +25,11 @@
                 <p:inputText value="#{internoMB.pro.moeda}"/>
                 <p:outputLabel value="Imposto"/>
                 <p:inputText value="#{internoMB.pro.imposto}"/>
-                <!--<p:outputLabel value="Incentivo"/>
-                <p:inputText value="#"/> -->
+                <p:outputLabel value="Incentivo"/>
+                <p:selectOneMenu value="#{internoMB.pro.incentivo}" style="width:125px">
+                    <f:selectItem itemLabel="Sim" itemValue= "True" />
+                    <f:selectItem itemLabel="Não" itemValue= "False" />
+                </p:selectOneMenu>
             </p:panelGrid>
             <p:commandButton value="Salvar"
                              action="#{internoMB.salvar()}"

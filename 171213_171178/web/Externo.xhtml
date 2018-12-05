@@ -3,7 +3,7 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
-                xmlns:f="http://java.sun.com/jsf/core/">
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
                 
         <ui:define name="title">
 		<h:outputText value="Produto Exportação" />
@@ -19,7 +19,6 @@
                     <p:inputText value="#{externoMB.pro.nome}"/>
                 <p:outputLabel for="formPro" value="Categoria" />
                 <p:selectOneMenu value="#{externoMB.pro.categoria}" style="width:125px">
-                    <f:selectItem itemLabel="" itemValue="" />
                     <f:selectItem itemLabel="Casa" itemValue="Casa" />
                     <f:selectItem itemLabel="Cozinha" itemValue="Cozinha" />
                     <f:selectItem itemLabel="Higiene" itemValue="Higiene" />
