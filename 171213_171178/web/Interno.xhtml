@@ -12,23 +12,24 @@
 	<ui:define name="principal">
             <h1>Produto Exportação</h1>
             <h:form id="formPro1">
-            <p:panelGrid columns="2">
-                <p:outputLabel value="Código"/>
-                <p:inputText value="#{internoMB.pro.codigo}"/>
-                <p:outputLabel value="Nome"/>
-                <p:inputText value="#{internoMB.pro.nome}"/>
-                <p:outputLabel value="Categoria"/>
-                <p:inputText value="#{internoMB.pro.categoria}"/>
-                <p:outputLabel value="Preço"/>
-                <p:inputText value="#{internoMB.pro.preco}"/>
-                <p:outputLabel value="Moeda"/>
-                <p:inputText value="#{internoMB.pro.moeda}"/>
-                <p:outputLabel value="Imposto"/>
-                <p:inputText value="#{internoMB.pro.imposto}"/>
-                <p:outputLabel value="Incentivo"/>
-                <p:selectBooleanButton id="incentivo" value="#{internoMB.pro.incentivo}" onLabel="Sim" offLabel="Não" style="width:60px" />
-                </p:selectOneMenu>
-            </p:panelGrid>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Código"/>
+                    <p:inputText value="#{internoMB.pro.codigo}"/>
+                    <p:outputLabel value="Nome"/>
+                    <p:inputText value="#{internoMB.pro.nome}"/>
+                    <p:outputLabel value="Categoria"/>
+                    <p:inputText value="#{internoMB.pro.categoria}"/>
+                    <p:outputLabel value="Preço"/>
+                    <p:inputText value="#{internoMB.pro.preco}"/>
+                    <p:outputLabel value="Moeda"/>
+                    <p:inputText value="#{internoMB.pro.moeda}"/>
+                    <p:outputLabel value="Imposto"/>
+                    <p:inputText value="#{internoMB.pro.imposto}"/>
+                    <p:outputLabel value="Incentivo"/>
+                    <p:selectBooleanButton id="incentivo" value="#{internoMB.pro.incentivo}" onLabel="Sim" offLabel="Não" style="width:60px" />
+                    </p:selectOneMenu>
+                </p:panelGrid>
+                
             <p:commandButton value="Salvar"
                              action="#{internoMB.salvar()}"
                              update=":formPro1"/>
