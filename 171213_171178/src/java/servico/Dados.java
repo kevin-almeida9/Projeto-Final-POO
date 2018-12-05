@@ -11,6 +11,7 @@ public class Dados {
     private static ArrayList <Produto> LISTA_PRODUTOS;
     private static ArrayList <Pedido> LISTA_PEDIDOS;
     
+    
     public static void init() {
         
          LISTA_CLIENTES = new ArrayList();

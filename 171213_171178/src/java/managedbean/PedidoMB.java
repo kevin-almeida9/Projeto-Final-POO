@@ -1,5 +1,5 @@
 
-package managedbean;
+package Managedbean;
 
 import Modelo.Pedido;
 import java.util.ArrayList;

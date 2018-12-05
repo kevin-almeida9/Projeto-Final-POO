@@ -1,5 +1,5 @@
 
-package managedbean;
+package Managedbean;
 
 import Modelo.ProdutoMercadoInterno;
 import Servico.ProdutoService;
