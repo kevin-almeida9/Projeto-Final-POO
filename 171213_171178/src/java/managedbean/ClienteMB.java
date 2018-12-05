@@ -1,47 +1,14 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Managedbean;
 
-import Modelo.Cliente;
-import Servico.ClienteService;
-import java.util.List;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
-@ManagedBean
-@SessionScoped
+/**
+ *
+ * @author kevin
+ */
 public class ClienteMB {
-    private ClienteService clienteService = new ClienteService();
-    private Cliente cli = new Cliente();
-    private Cliente selectedClin;
-    
-    public void salvar(){
-        clienteService.salvar(cli);
-        cli = new Cliente();
-    }
-    
-    public List<Cliente> getClientes(){
-        return clienteService.getClientes();
-    }
-    
-    public Cliente getCli(){
-        return cli;
-    }
-    
-    public void setCli(Cliente Cli){
-        this.cli = Cli;
-    }
-    
-    public Cliente getSelectedClin(){
-        return selectedClin;
-    }
-    
-    public void setSelectedClin(Cliente selectedClin){
-        this.selectedClin = selectedClin;
-    }
     
 }
-    
-
-    
-    
-    
