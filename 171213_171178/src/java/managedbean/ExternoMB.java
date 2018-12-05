@@ -21,7 +21,7 @@ public class ExternoMB {
     }
 
     public ArrayList<ProdutoExportacao> getProdutos() {
-        return produtoService.getProdutosExterno();
+                return produtoService.getProdutosExterno();
     }
 
     public void setProdutoService(ProdutoService produtoService) {

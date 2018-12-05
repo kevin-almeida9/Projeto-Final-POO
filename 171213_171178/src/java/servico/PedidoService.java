@@ -1,8 +1,7 @@
 
-package servico;
+package Servico;
 
 import Modelo.Pedido;
-import Servico.Dados;
 import java.util.ArrayList;
 
 
