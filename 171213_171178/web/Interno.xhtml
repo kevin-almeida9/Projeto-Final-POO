@@ -26,9 +26,7 @@
                 <p:outputLabel value="Imposto"/>
                 <p:inputText value="#{internoMB.pro.imposto}"/>
                 <p:outputLabel value="Incentivo"/>
-                <p:selectOneMenu value="#{internoMB.pro.incentivo}" style="width:125px">
-                    <f:selectItem itemLabel="Sim" itemValue= "True" />
-                    <f:selectItem itemLabel="Não" itemValue= "False" />
+                <p:selectBooleanButton id="incentivo" value="#{internoMB.pro.incentivo}" onLabel="Sim" offLabel="Não" style="width:60px" />
                 </p:selectOneMenu>
             </p:panelGrid>
             <p:commandButton value="Salvar"
@@ -48,27 +46,27 @@
                          rowKey="#{p.codigo}"
                          >
                 
-                <p:column headerText="Código">
-                    <p:outputLabel value="#{p.codigo}"/>
-                </p:column>
-                <p:column headerText="Nome">
-                    <p:outputLabel value="#{p.nome}"/>
-                </p:column>
-                  <p:column headerText="Categoria">
-                      <p:outputLabel value="#{p.categoria}"/>
-                </p:column>
-                <p:column headerText="Preço">
-                    <p:outputLabel value="#{p.preco}"/>
-                </p:column>
-                <p:column headerText="Moeda">
-                    <p:outputLabel value="#{p.moeda}"/>
-                </p:column>
-                <p:column headerText="Imposto">
-                    <p:outputLabel value="#{p.imposto}"/>
-                </p:column>
-                <!--<p:column headerText="Incentivo">
-                    <p:outputLabel value="#"/>
-                </p:column>-->
+                    <p:column headerText="Código">
+                        <p:outputLabel value="#{p.codigo}"/>
+                    </p:column>
+                    <p:column headerText="Nome">
+                        <p:outputLabel value="#{p.nome}"/>
+                    </p:column>
+                      <p:column headerText="Categoria">
+                          <p:outputLabel value="#{p.categoria}"/>
+                    </p:column>
+                    <p:column headerText="Preço">
+                        <p:outputLabel value="#{p.preco}"/>
+                    </p:column>
+                    <p:column headerText="Moeda">
+                        <p:outputLabel value="#{p.moeda}"/>
+                    </p:column>
+                    <p:column headerText="Imposto">
+                        <p:outputLabel value="#{p.imposto}"/>
+                    </p:column>
+                    <p:column headerText="Incentivo">
+                        <p:outputLabel value="#{p.incentivo}"/>
+                    </p:column>
                 
                 </p:dataTable>
             </h:form>           
