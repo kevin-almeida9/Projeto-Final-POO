@@ -37,6 +37,9 @@
                     <p:outputLabel value="#{c.descricao}"/>
                 </p:column>
             </p:dataTable>
+            <p:contextMenu for="dataTableFunc">
+                <p:menuitem value="Delete" update="dataTableFunc" icon="pi pi-times" action="#{categoriaMB.deleteCatg}"/>
+            </p:contextMenu>
         </h:form>
     </ui:define>
     

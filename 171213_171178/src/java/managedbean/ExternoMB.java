@@ -44,5 +44,8 @@ public class ExternoMB {
         this.selectedPro = selectedPro;
     }
     
-    
+    public void deleteProd(){
+        this.produtoService.remover(selectedPro);
+        selectedPro = null;
+    }
 }

@@ -39,5 +39,8 @@ public class PedidoMB {
         this.selectedPedido = selectedPedido;
     }
    
-   
+    public void deletePdd(){
+        this.pedidoService.remove(selectedPedido);
+        selectedPedido = null;
+    }
 }

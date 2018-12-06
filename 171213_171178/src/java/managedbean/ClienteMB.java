@@ -40,6 +40,10 @@ public class ClienteMB {
         this.selectedClin = selectedClin;
     }
     
+    public void deleteCli(){
+        this.clienteService.remover(selectedClin);
+        selectedClin = null;
+    }
 }
     
 

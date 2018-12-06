@@ -24,11 +24,13 @@
                         </p:selectOneMenu>
                     <p:outputLabel value="Preço"/>
                     <p:inputText value="#{internoMB.pro.preco}"/>
-                    <p:outputLabel for="formPro1" value="Moeda" />
-                    <p:selectOneMenu value="#{externoMB.pro.moeda}" converter="converterMoeda" style="width:125px">
-                            <f:selectItems value="#{moedaMB.moedas}" var="moe" 
-                                           itemValue ="#{moe.codigo}" itemLabel="#{moe.nome}" />
-                        </p:selectOneMenu>
+                    <p:outputLabel for="formPro1" value="Moeda"/>
+                    <p:selectOneMenu value="#{internoMB.pro.moeda}" style="width:125px">
+                        <f:selectItem itemLabel="Real" itemValue="1" />
+                        <f:selectItem itemLabel="Dólar" itemValue="2" />
+                        <f:selectItem itemLabel="Libra" itemValue="3" />
+                        <f:selectItem itemLabel="Íenes" itemValue="4" />
+                     </p:selectOneMenu>
                     <p:outputLabel value="Imposto"/>
                     <p:inputText value="#{internoMB.pro.imposto}"/>
                     <p:outputLabel value="Incentivo"/>
@@ -57,6 +59,7 @@
                     <f:facet name="header">
                         Produtos Importação
                     </f:facet>
+                
                 
                     <p:column headerText="Código">
                         <p:cellEditor>
@@ -102,6 +105,10 @@
                     </p:column>
                 
                 </p:dataTable>
+                
+                <p:contextMenu for="dataTableFunc">
+                    <p:menuitem value="Delete" update="dataTableFunc" icon="pi pi-times" action="#{internoMB.deleteProd}"/>
+                </p:contextMenu>
             </h:form>           
 	</ui:define>
 </ui:composition>

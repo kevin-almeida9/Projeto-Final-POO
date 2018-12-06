@@ -4,9 +4,9 @@ package Servico;
 
 import Modelo.Categoria;
 import Modelo.Cliente;
-import Modelo.Moeda;
 import Modelo.Pedido;
 import Modelo.Produto;
+import Modelo.ProdutoExportacao;
 import java.util.ArrayList;
 
 public class Dados {
@@ -14,7 +14,7 @@ public class Dados {
     private static ArrayList <Produto> LISTA_PRODUTOS;
     private static ArrayList <Pedido> LISTA_PEDIDOS;
     private static ArrayList <Categoria> LISTA_CATEGORIAS;
-    private static ArrayList <Moeda> LISTA_MOEDA;
+
     
     public static void init() {
         
@@ -22,7 +22,17 @@ public class Dados {
         LISTA_PRODUTOS = new ArrayList();
         LISTA_PEDIDOS = new ArrayList();
         LISTA_CATEGORIAS = new ArrayList();
-        LISTA_MOEDA = new ArrayList();
+
+        
+        LISTA_CLIENTES.add(new Cliente(1, "Zontae", "Rua Inverno", "34111137", 1, 10));
+        LISTA_CLIENTES.add(new Cliente(1, "JamiScript", "Rua Verão", "8957417", 2, 0.10));
+        LISTA_CLIENTES.add(new Cliente(1, "Gustov", "Rua Primavera", "95103570", 3, 15000));
+        LISTA_CLIENTES.add(new Cliente(1, "Vinimybad", "Rua Outono", "77111992", 1, 1000));
+        LISTA_CLIENTES.add(new Cliente(1, "Quévinho", "Rua Primavera", "156592956", 2, 180.10));
+        
+        
+        
+        
     }
 
     public static ArrayList<Pedido> getPedidos() {
@@ -54,10 +64,5 @@ public class Dados {
         return LISTA_CATEGORIAS;
     }
     
-    public static ArrayList<Moeda> getMoedas(){
-        if(LISTA_MOEDA == null){
-            init();
-        }
-        return LISTA_MOEDA;
-    }
+
 }

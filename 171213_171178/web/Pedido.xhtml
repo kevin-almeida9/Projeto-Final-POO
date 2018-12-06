@@ -10,42 +10,14 @@
 
 	<ui:define name="principal">
             <h1>Pedidos</h1>
-            
-            <script type="text/javascript">    
-                PrimeFaces.locales['de'] = {
-                    closeText: 'Schließen',
-                    prevText: 'Zurück',
-                    nextText: 'Weiter',
-                    monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
-                    monthNamesShort: ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
-                    dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
-                    dayNamesShort: ['Son', 'Mon', 'Die', 'Mit', 'Don', 'Fre', 'Sam'],
-                    dayNamesMin: ['S', 'M', 'D', 'M ', 'D', 'F ', 'S'],
-                    weekHeader: 'Woche',
-                    FirstDay: 1,
-                    isRTL: false,
-                    showMonthAfterYear: false,
-                    yearSuffix: '',
-                    timeOnlyTitle: 'Nur Zeit',
-                    timeText: 'Zeit',
-                    hourText: 'Stunde',
-                    minuteText: 'Minute',
-                    secondText: 'Sekunde',
-                    currentText: 'Aktuelles Datum',
-                    ampm: false,
-                    month: 'Monat',
-                    week: 'Woche',
-                    day: 'Tag',
-                    allDayText: 'Ganzer Tag'
-                };
-            </script>
+         
             
             <h:form id="formPed">
                 <p:panelGrid columns="2">
                     <p:outputLabel value="Numero"/>
                     <p:inputText value="#{pedidoMB.ped.numero}"/>
-                    <p:outputLabel for="cldr" value="Data:"/>
-                    <p:calendar id="cldr" value="#{pedidoMB.ped.date}" showOn="cldr" /> 
+                    <p:outputLabel  value="Data:"/>
+                    <p:calendar value="#{pedidoMB.ped.date}" /> 
                     <p:outputLabel value="Itens Pedidos"/>
                     <p:inputText value="#{pedidoMB.ped.itens}"/> 
                     <p:outputLabel value="Cliente"/>
@@ -53,7 +25,8 @@
                 </p:panelGrid>
                 
                 <p:commandButton value="Salvar"
-                                 action="#{pedidoMB.salvar()}"/>
+                                 action="#{pedidoMB.salvar()}"
+                                 update=":formPed"/>
                     
                 <p:growl id="msgs" showDetail="true"/>
                 <p:dataTable id="dataTableFunc"
@@ -72,7 +45,7 @@
                         <p:outputLabel value="#{p.numero}"/>
                     </p:column>
                     <p:column headerText="Data">
-                        <p:outputLabel value="#{p.date}"/>
+                        <p:outputLabel value="#{p.date}" />
                     </p:column>
                     <p:column headerText="Itens Pedidos">
                         <p:outputLabel value="#{p.itens}"/>
@@ -81,6 +54,9 @@
                         <p:outputLabel value="#{p.cliente}"/>
                     </p:column>
                 </p:dataTable>
+                <p:contextMenu for="dataTableFunc">
+                    <p:menuitem value="Delete" update="dataTableFunc" icon="pi pi-times" action="#{pedidoMB.deletePdd}"/>
+                </p:contextMenu>
                 
             </h:form>                        
             

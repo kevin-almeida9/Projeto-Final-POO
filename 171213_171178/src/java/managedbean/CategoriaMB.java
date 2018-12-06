@@ -39,6 +39,11 @@ public class CategoriaMB {
         this.selectedCat = selectedCat;
     }
     
+    public void deleteCatg(){
+        this.categoriaService.remover(selectedCat);
+        selectedCat = null;
+    }
+    
 }
     
 

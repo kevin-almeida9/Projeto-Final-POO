@@ -9,6 +9,22 @@ public class Produto {
     private int moeda;
     private double imposto;
 
+    public Produto(int codigo, String nome, Categoria categoria, double preco, int moeda, double imposto) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.preco = preco;
+        this.moeda = moeda;
+        this.imposto = imposto;
+    }
+    
+    public Produto()
+    {
+        
+    }
+
+    
+    
     public int getCodigo() {
         return codigo;
     }
