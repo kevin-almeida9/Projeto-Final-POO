@@ -1,0 +1,50 @@
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    
+    <ui:define name="title">
+        <h:outputText value="Cadastro de Cliente"/> 
+    </ui:define>
+    
+    <ui:define name="principal">
+        <h1>Moeda</h1>
+        <h:form id="formMoe">
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Código"/>
+                <p:inputText value="#{moedaMB.moe.codigo}"/>
+                <p:outputLabel value="Nome"/>
+                <p:inputText value="#{moedaMB.moe.nome}"/>
+            </p:panelGrid>
+            <p:commandButton value="Salvar"
+                             action="#{moedaMB.salvar()}"
+                             update=":formMoe"/>
+            
+            <p:growl id="msgs" showDetail="true"/>
+            <p:dataTable id="dataTableFunc"
+                         var="m" value="#{moedaMB.moedas}"
+                         rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15"
+                         editable="true"
+                         selection="#{moedaMB.selectedMoe}"
+                         selectionMode="single"
+                         rowKey="#{m.codigo}"
+                         >
+                
+                <p:column headerText="Código">
+                    <p:outputLabel value="#{m.codigo}"/>
+                </p:column>
+                 <p:column headerText="Nome">
+                     <p:outputLabel value="#{m.nome}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </ui:define>
+    
+    
+    
+</ui:composition>

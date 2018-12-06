@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 
 public class CategoriaService {
-    private ArrayList <Categoria>  listCategoria = Dados.getCategoriass();
+    private ArrayList <Categoria>  listCategoria = Dados.getCategorias();
     
     public void salvar (Categoria c){
         listCategoria.add(c);

@@ -4,6 +4,7 @@ package Servico;
 
 import Modelo.Categoria;
 import Modelo.Cliente;
+import Modelo.Moeda;
 import Modelo.Pedido;
 import Modelo.Produto;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class Dados {
     private static ArrayList <Produto> LISTA_PRODUTOS;
     private static ArrayList <Pedido> LISTA_PEDIDOS;
     private static ArrayList <Categoria> LISTA_CATEGORIAS;
+    private static ArrayList <Moeda> LISTA_MOEDA;
     
     public static void init() {
         
@@ -20,6 +22,7 @@ public class Dados {
         LISTA_PRODUTOS = new ArrayList();
         LISTA_PEDIDOS = new ArrayList();
         LISTA_CATEGORIAS = new ArrayList();
+        LISTA_MOEDA = new ArrayList();
     }
 
     public static ArrayList<Pedido> getPedidos() {
@@ -44,10 +47,17 @@ public class Dados {
         return LISTA_PRODUTOS;
     }
     
-    public static ArrayList<Categoria> getCategoriass() {
+    public static ArrayList<Categoria> getCategorias() {
         if(LISTA_CATEGORIAS == null){
             init();
         }
         return LISTA_CATEGORIAS;
+    }
+    
+    public static ArrayList<Moeda> getMoedas(){
+        if(LISTA_MOEDA == null){
+            init();
+        }
+        return LISTA_MOEDA;
     }
 }
