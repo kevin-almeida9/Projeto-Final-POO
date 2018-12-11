@@ -9,14 +9,14 @@
 	</ui:define>
 
 	<ui:define name="principal">
-            <h1>Pedido</h1>         
+            <h1 style="text-align: center">Pedido</h1>         
             
             <h:outputLabel value="Produtos" style="font-size: 20px; font-weight: bold"/>
             <h:form id="formPed">
                 
                 <p:growl id="btnfnlz" showDetail="true"/>
                 
-                <p:panelGrid style= "position: relative; margin-top: 0%" columns="2">
+                <p:panelGrid style= "position: relative" columns="2">
                     <p:outputLabel value="Numero"/>
                     <p:inputText value="#{itempedidoMB.ped.numero}"/>
                     <p:outputLabel value="Item"/>
@@ -25,12 +25,12 @@
                     <p:spinner value="#{itempedidoMB.ped.itens.size}" min="1"/>
                 </p:panelGrid>
                 
+                <p:commandButton value="Adicionar ao Carrinho"
+                                 icon="fa-cart-plus"
+                                 action="#{itempedidoMB.salvar()}"
+                                 update=":formPed"/>
                 
-                <p:outputLabel value="Finalizar" style= "font-size: 20px; font-weight: bold; position: relative; margin-left: 70%"/>
-                
-                
-<!--                <p:panelGrid  style= "position: absolute; top:15%; left:70%" columns="2" >-->
-<!--                <p:panelGrid  style= "margin-left: 70%" columns="2" >-->
+                <p:outputLabel value="Finalizar" style= "font-size: 20px; font-weight: bold; position: absolute; margin-left: 70%"/>
 
                 <p:panelGrid  style= "position: relative; margin-left: 70%" columns="2" >
                     <p:outputLabel value="ID"/>
@@ -41,12 +41,6 @@
                     <p:calendar value="#{pedidoMB.ped.date}" /> 
                 </p:panelGrid>
 
-                <p:commandButton value="Adicionar ao Carrinho"
-                                 icon="fa-cart-plus"
-                                 action="#{itempedidoMB.salvar()}"
-                                 update=":formPed"/>
-                                 
-                
                 <p:commandButton style="margin-left:70%"
                                  value="Finalizar Pedido"
                                  action="#{pedidoMB.salvar()}"
