@@ -1,8 +1,8 @@
 
-package Managedbean;
+package managedbean;
 
-import Modelo.Categoria;
-import Servico.CategoriaService;
+import modelo.Categoria;
+import servico.CategoriaService;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

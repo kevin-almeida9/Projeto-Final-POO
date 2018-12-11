@@ -13,29 +13,39 @@
          
             
             <h:form id="formPed">
-                <p:panelGrid columns="3">
+                <p:panelGrid columns="2">
                     <p:outputLabel value="Numero"/>
-                    <p:inputText value="#{pedidoMB.ped.numero}"/>
-                    <p:outputLabel value=""/>
-                    <p:outputLabel value="Itens Pedidos"/>
-                    <p:inputText value="#{pedidoMB.ped.itens}"/>
-                    <p:outputLabel value=""/>
+                    <p:inputText value="#{itempedidoMB.ped.numero}"/>
+                    <p:outputLabel value="Numero"/>
+                    <p:inputText value="#{itempedidoMB.ped.numero}"/>
+                    <p:outputLabel value="Item"/>
+                    <p:inputText value="#{itempedidoMB.ped.itens}"/>
                     <p:outputLabel value="Quantidade"/>
-                    <p:spinner value="#{pedidoMB.ped.itens.size}" min="0"/>
-                    <p:outputLabel value=""/>
-                    
-                    
+                    <p:spinner value="#{itempedidoMB.ped.itens.size}" min="1"/>
                 </p:panelGrid>
                 
-                <p:outputLabel value=""/>
+                <p:panelGrid columns="2" >
+                    <p:outputLabel value="ID"/>
+                    <p:inputText value="#{pedidoMB.ped.numero}"/>
+                    <p:outputLabel value="Cliente"/>
+                    <p:inputText value="#{pedidoMB.ped.itens}"/>
+                    <p:outputLabel value="Data"/>
+                    <p:calendar value="#{pedidoMB.ped.date}" /> 
+                    
+                    <p:outputLabel value=""/>
+                </p:panelGrid>
 
                 <p:commandButton value="Adicionar ao Carrinho"
+                                 action="#{itempedidoMB.salvar()}"
+                                 update=":formPed"/>
+                
+                <p:commandButton value="Finalizar Pedido"
                                  action="#{pedidoMB.salvar()}"
                                  update=":formPed"/>
                     
                 <p:growl id="msgs" showDetail="true"/>
                 <p:dataTable id="dataTableFunc"
-                             var="p"
+                             var="p" value="#{pedidoMB.pedidos}"
                              editable="true"
                              selectionMode="single"
                              rowKey="#{p.numero}"
@@ -45,6 +55,9 @@
                         <p:outputLabel value="#{p.numero}"/>
                     </p:column>
                     <p:column headerText="Item">
+                        <p:outputLabel value="#{p.itens}"/>
+                    </p:column>
+                    <p:column headerText="Quantidade">
                         <p:outputLabel value="#{p.itens}"/>
                     </p:column>
 
