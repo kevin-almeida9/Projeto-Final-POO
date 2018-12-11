@@ -14,7 +14,7 @@ public class Dados {
     private static ArrayList <Produto> LISTA_PRODUTOS;
     private static ArrayList <Pedido> LISTA_PEDIDOS;
     private static ArrayList <Categoria> LISTA_CATEGORIAS;
-
+    
     
     public static void init() {
         
@@ -22,6 +22,7 @@ public class Dados {
         LISTA_PRODUTOS = new ArrayList();
         LISTA_PEDIDOS = new ArrayList();
         LISTA_CATEGORIAS = new ArrayList();
+        
 
         
         LISTA_CLIENTES.add(new Cliente(1, "Zontae", "Rua Inverno", "34111137", 1, 10));

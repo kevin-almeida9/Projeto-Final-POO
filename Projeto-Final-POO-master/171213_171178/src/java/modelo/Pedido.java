@@ -7,10 +7,29 @@ import java.util.Date;
 
 
 public class Pedido {
-    private int numero;
+    private long numero;
     private Date date;
     private ArrayList<ItemPedido> itens;
     private Cliente cliente;
+    
+    
+    
+    public ArrayList<ItemPedido> pedir(){
+        
+        return getItens();
+    }
+    
+    
+    public void receber(ArrayList <ItemPedido> itens){
+        
+        setItens(itens);
+        
+    }
+    
+    public void init(){
+        
+        itens = new ArrayList();
+    }
     
     public double totalPedido(){
         return 0;
@@ -19,44 +38,45 @@ public class Pedido {
     public double totalImposto(){
         return 0;
     }
-
-    public int getNumero() {
+    
+    
+    
+    
+    
+    private long getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    private void setNumero(long numero) {
         this.numero = numero;
     }
 
-    public Date getDate() {
+    private Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    private void setDate(Date date) {
         this.date = date;
     }
 
-    public ArrayList<ItemPedido> getItens() {
+    private ArrayList<ItemPedido> getItens() {
+        if(itens == null){
+            init();
+        }
+        
         return itens;
     }
 
-    public void setItens(ArrayList<ItemPedido> itens) {
+    private void setItens(ArrayList<ItemPedido> itens) {
         this.itens = itens;
     }
 
-    public Cliente getCliente() {
+    private Cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    private void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    @Override
-    public String toString() {
-        return "Pedido{" + "numero=" + numero + ", date=" + date + ", itens=" + itens + ", cliente=" + cliente + '}';
-    }
-    
-    
-    
 }
