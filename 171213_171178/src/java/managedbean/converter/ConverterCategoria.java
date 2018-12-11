@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Managedbean.converter;
+package managedbean.converter;
 
 /**
  *
@@ -11,12 +11,12 @@ package Managedbean.converter;
  */
 
 
-import Modelo.Categoria;
+import modelo.Categoria;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
-import Servico.CategoriaService;
+import servico.CategoriaService;
 
 
 

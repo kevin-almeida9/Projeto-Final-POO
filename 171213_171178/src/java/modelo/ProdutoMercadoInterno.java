@@ -1,5 +1,5 @@
 
-package Modelo;
+package modelo;
 
 
 public class ProdutoMercadoInterno extends Produto{

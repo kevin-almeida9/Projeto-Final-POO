@@ -6,7 +6,7 @@ import modelo.ProdutoExportacao;
 import modelo.ProdutoMercadoInterno;
 import java.util.ArrayList;
 
-public class ProdutoService {
+public class ItemPedidoService {
         private ArrayList <Produto>  listProdutos = Dados.getProdutos();
     
     public void salvar (Produto p){

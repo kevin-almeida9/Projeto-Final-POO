@@ -9,7 +9,7 @@ import servico.PedidoService;
 
 @ManagedBean
 @SessionScoped
-public class PedidoMB {
+public class ItemPedidoMB {
    private PedidoService pedidoService = new PedidoService();
    private Pedido ped = new Pedido();
    private Pedido selectedPedido;

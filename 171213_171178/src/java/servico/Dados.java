@@ -1,12 +1,12 @@
 
-package Servico;
+package servico;
 
 
-import Modelo.Categoria;
-import Modelo.Cliente;
-import Modelo.Pedido;
-import Modelo.Produto;
-import Modelo.ProdutoExportacao;
+import modelo.Categoria;
+import modelo.Cliente;
+import modelo.Pedido;
+import modelo.Produto;
+import modelo.ProdutoExportacao;
 import java.util.ArrayList;
 
 public class Dados {
@@ -15,7 +15,6 @@ public class Dados {
     private static ArrayList <Pedido> LISTA_PEDIDOS;
     private static ArrayList <Categoria> LISTA_CATEGORIAS;
 
-    
     public static void init() {
         
         LISTA_CLIENTES = new ArrayList();
