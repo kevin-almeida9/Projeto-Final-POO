@@ -1,11 +1,11 @@
 
-package managedbean;
+package Managedbean;
 
-import modelo.Pedido;
+import Modelo.Pedido;
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import servico.PedidoService;
+import Servico.PedidoService;
 
 @ManagedBean
 @SessionScoped

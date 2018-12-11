@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Managedbean.converter;
+package managedbean.converter;
 
 /**
  *
@@ -11,27 +11,27 @@ package Managedbean.converter;
  */
 
 
-import Modelo.Categoria;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
-import Servico.CategoriaService;
+import modelo.Empresa;
+import servico.EmpresaService;
 
 
 
 
-@FacesConverter("converterCategoria")
-public class ConverterCategoria implements Converter {
+@FacesConverter("converterEmpresa")
+public class ConverterEmpresa implements Converter {
 
-	private CategoriaService servico = new CategoriaService();
+	private EmpresaService servico = new EmpresaService();
 	
 	@Override
 	public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
 		
-		Categoria e=null;
+		Empresa e=null;
 		if(value != null && !value.equals("")) {
-			e = servico.getCategoriaByDescricao(value);
+			e = servico.getEmpresaByNome(value);	
 		}
 		
 		
@@ -41,11 +41,11 @@ public class ConverterCategoria implements Converter {
 
 	@Override
 	public String getAsString(FacesContext fc, UIComponent uic,
-			Object categoria) {
-		if (categoria == null || categoria.equals("")) {
+			Object empresa) {
+		if (empresa == null || empresa.equals("")) {
 			return null;
 		} else {
-			return ((Categoria) categoria).getDescricao();
+			return ((Empresa) empresa).getNome();
 
 		}
 	}

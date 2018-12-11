@@ -1,7 +1,7 @@
 
-package servico;
+package Servico;
 
-import modelo.Categoria;
+import Modelo.Categoria;
 import java.util.ArrayList;
 
 

@@ -1,8 +1,8 @@
 
-package managedbean;
+package Managedbean;
 
-import modelo.ProdutoMercadoInterno;
-import servico.ProdutoService;
+import Modelo.ProdutoMercadoInterno;
+import Servico.ProdutoService;
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

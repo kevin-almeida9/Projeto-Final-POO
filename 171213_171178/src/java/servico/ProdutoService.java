@@ -1,9 +1,9 @@
-package servico;
+package Servico;
 
 
-import modelo.Produto;
-import modelo.ProdutoExportacao;
-import modelo.ProdutoMercadoInterno;
+import Modelo.Produto;
+import Modelo.ProdutoExportacao;
+import Modelo.ProdutoMercadoInterno;
 import java.util.ArrayList;
 
 public class ProdutoService {

@@ -1,8 +1,9 @@
 
-package managedbean;
+package Managedbean;
 
-import modelo.Cliente;
-import servico.ClienteService;
+
+import Modelo.Cliente;
+import Servico.ClienteService;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
